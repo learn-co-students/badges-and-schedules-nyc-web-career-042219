@@ -5,11 +5,16 @@ def badge_maker(array)
 end
 
 def batch_badge_creator(array)
-  names_in_list = attendees.size 
+  names_in_attendees = attendees.size 
   names_taken_out = 0 
-    while names_taken_out < names_in_list
-    puts "Hello, my name is #{name}."
-    names_taken_out += 1
+    loop do
+      if names_taken_out < names_in_attendees
+        names_taken_out += 1
+        return "Hello, my name is #{attendees}."
+      else
+        break
+end
+end
 end
 
 def assign_rooms(array, integer)
