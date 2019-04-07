@@ -1,27 +1,34 @@
 
 attendees = ["Edsger","Ada","Charles","Alan","Grace","Linus","Matz"]
-def badge_maker(array)
+def badge_maker(name)
   return "Hello, my name is #{name}."
 end
 
-def batch_badge_creator(array)
-  names_in_attendees = attendees.size 
-  names_taken_out = 0 
-    loop do
-      if names_taken_out < names_in_attendees
-        names_taken_out += 1
-        return "Hello, my name is #{attendees}."
-      else
-        break
-end
-end
-end
-
-def assign_rooms(array, integer)
+def batch_badge_creator(attendees)
+  badges=[]
+  attendees.each do|badge|
+  badges.push("Hello, my name is #{badge}.")
+  end
+  return badges
   
-end
+end 
 
-def printer
-  batch_badge_creator
-  assign_rooms
-end
+
+def assign_rooms(speakers)
+  assign=[]
+  
+  speakers.each_with_index{|speaker,index|
+  assign.push("Hello, #{speaker}! You'll be assigned to room #{index + 1}!")
+    }
+   return assign
+end 
+
+def printer(attendees)
+  batch_badge_creator(attendees).each do |badge|
+    puts badge
+  end
+  
+  assign_rooms(attendees).each do |badge|
+    puts badge
+  end
+end 
